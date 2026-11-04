@@ -1,6 +1,6 @@
 Name:           libssh
 Version:        0.9.6
-Release:        13%{?dist}
+Release:        13.1%{?dist}
 Summary:        A library implementing the SSH protocol
 License:        LGPLv2+
 URL:            http://www.libssh.org
@@ -18,6 +18,42 @@ Patch3:         auth_bypass.patch
 Patch4:         fix_tests.patch
 Patch5:         covscan23.patch
 Patch6:         CVE-2023-48795.patch
+
+# https://gitlab.com/libssh/libssh-mirror/-/commit/c2c56bacab00766d01671413321d564227aabf19
+Patch1001:	CVE-2023-6004-0001.patch
+# https://gitlab.com/libssh/libssh-mirror/-/commit/a66b4a6eae6614d200a3625862d77565b96a7cd3
+Patch1002:	CVE-2023-6004-0002.patch
+# https://gitlab.com/libssh/libssh-mirror/-/commit/8615c24647f773a5e04203c7459512715d698be1
+Patch1003:	CVE-2023-6004-0003.patch
+# https://gitlab.com/libssh/libssh-mirror/-/commit/c6180409677c765e6b9ae2b18a3a7a9671ac1dbe
+Patch1004:	CVE-2023-6004-0004.patch
+# https://gitlab.com/libssh/libssh-mirror/-/commit/9bbb817c0c5434f03613d0783b2ef5f52235b901
+Patch1005:	CVE-2023-6004-0005.patch
+# https://gitlab.com/libssh/libssh-mirror/-/commit/22492b69bba22b102342afc574800d354a08e405
+Patch1006:	CVE-2023-6004-0006.patch
+# https://gitlab.com/libssh/libssh-mirror/-/commit/d7467498fd988949edde9c6384973250fd454a8b
+Patch1007:	CVE-2023-6004-0007.patch
+# https://gitlab.com/libssh/libssh-mirror/-/commit/62d3101c1f76b6891b70c50154e0e934d6b8cb57
+Patch1008:	CVE-2023-6004-0008.patch
+# https://gitlab.com/libssh/libssh-mirror/-/commit/cea841d71c025f9c998b7d5fc9f2a2839df62921
+Patch1009:	CVE-2023-6004-0009.patch
+# https://gitlab.com/libssh/libssh-mirror/-/commit/2c492ee179d5caa2718c5e768bab6e0b2b64a8b0
+Patch1010:	CVE-2023-6004-0010.patch
+# https://gitlab.com/libssh/libssh-mirror/-/commit/1a02364b5107a4125ea3cb76fcdb6beabaebf3be
+Patch1011:	CVE-2023-6004-0011.patch
+# https://gitlab.com/libssh/libssh-mirror/-/commit/6f1b1e76bb38bc89819132e1810e4301ec9034a4
+Patch1012:	CVE-2023-6004-0012.patch
+
+# https://gitlab.com/libssh/libssh-mirror/-/commit/610d7a09f99c601224ae2aa3d3de7e75b1d284dd
+Patch1013:	CVE-2023-6918-0001.patch
+# https://gitlab.com/libssh/libssh-mirror/-/commit/63ff242131c8e6d98917456f71f6d33b9ef3a763
+Patch1014:	CVE-2023-6918-0002.patch
+# https://gitlab.com/libssh/libssh-mirror/-/commit/8b66d037d575e5f3ce4d35964547ff8c7e75ff8e
+Patch1015:	CVE-2023-6918-0003.patch
+# https://gitlab.com/libssh/libssh-mirror/-/commit/8977e246b6d7ae467cab008a49e0a9e3d84bc2a0
+Patch1016:	CVE-2023-6918-0004.patch
+# https://gitlab.com/libssh/libssh-mirror/-/commit/622421018b58392ffecc29726b947e089b678221
+Patch1017:	CVE-2023-6918-0005.patch
 
 BuildRequires:  cmake
 BuildRequires:  doxygen
@@ -146,6 +182,10 @@ popd
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/libssh/libssh_server.config
 
 %changelog
+* Tue Nov 03 2026 Pratham Patel <ppatel@ciq.com> - 0.9.6-13.1
+- Fix CVE-2023-6004
+- Fix CVE-2023-6918
+
 * Wed Jan 24 2024 Sahana Prasad <sahana@redhat.com> - 0.9.6-13
 - Fix CVE-2023-48795: Prefix truncation attack
   on Binary Packet Protocol (BPP)
